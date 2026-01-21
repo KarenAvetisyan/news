@@ -1,0 +1,116 @@
+/* ARROW DOWN */
+.arrow-down {
+  display: flex;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+/* FONT WEIGHTS */
+.fw-medium{
+  font-weight: 500;
+}
+/* FONT SIZES */
+.fs-14{
+  font-size: 14px;
+}
+
+
+/* NEWS ITEMS */
+.newsItem-row .newsItem-col{
+  position: relative;
+}
+.newsItem-row .newsItem-col:nth-of-type(even){
+  border-right: none;
+}
+.newsItem-row .newsItem-col:nth-of-type(odd) {
+    border-left: none;
+}
+.newsItem-row .newsItem-col:before{ 
+  content: "";
+  position: absolute;
+  top: calc(var(--bs-gutter-x) * -0.5);
+  left: calc(var(--bs-gutter-x) * 0.5);
+  width: calc(100% - calc(var(--bs-gutter-x) * 1));
+  height: 1px;
+  background-color: var(--color-grey);
+}
+.newsItem{
+  padding: 15px;
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  max-width: 696px;
+  container-name: newsItem;
+  container-type: inline-size;
+}
+.newsItem:hover .newsItem-title{
+  text-decoration: underline;
+}
+.newsItem-title{
+    font-size: 35px;
+}
+.newsItem-content{
+  padding: 20px 0;
+  color: var(--color-text);
+  font-size: 20px;
+}
+.newsItem-img img{
+  width: 100%;
+}
+.newsItem-rubric__wrap{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.newsItem-rubric{
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+@media (min-width: 578px) {
+  .newsItem-row .newsItem-col{
+      border-right: solid 1px var(--color-grey);
+    }
+    .newsItem-row .newsItem-col:nth-child(-n + 2):before{
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  ._border-right{
+    border-right: solid 1px var(--color-grey);
+  }
+  ._border-left{
+    border-left: solid 1px var(--color-grey);
+  }
+}
+@container newsItem (max-width: 457px) {
+  .newsItem-title{
+    font-size: 20px;
+  }
+  .newsItem-content{
+    font-size: 17px;
+  }
+  .newsItem-rubric__wrap{
+    font-size: 12px;
+  }
+}
+@container newsItem (max-width: 300px) {
+  .newsItem-title{
+    font-size: 16px;
+  }
+  .newsItem-content{
+    font-size: 14px;
+  }
+  .newsItem-rubric__wrap{
+    font-size: 10px;
+  }
+}
