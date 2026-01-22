@@ -16,22 +16,18 @@
 }
 
 :root{
-  --color-dark: #000000;
-  --color-primary: #1F3A5F; /* для заголовков, кнопок и т.д. */
-  --color-text: #000000; /* для текста. */
-  --color-grey: #8A9199; /* разделительные линии, элементы интерфейса */
-  --color-sky-blue: #3A7CA5; /* выделения ссылок, выделения пунктов меню при наведении */
-  --color-grey-light: #F3F5F7; /* возможно, фон, какие-то блоки. */
   --bg-dark: #1C1F24; /* для подвала, темных элементов */
+  --color-dark: #000000; /* Для текстов */
+  --color-primary: #1F3A5F; /* для заголовков, кнопок и т.д. */
+  --color-sky-blue: #3A7CA5; /* выделения ссылок, выделения пунктов меню при наведении */
+  --color-text: #000000; /* для текста. */
+  --color-grey: rgba(191, 191, 191, 0.565); /* разделительные линии, элементы интерфейса */
 }
 
-hr.hr-grey{
+hr{
   background-color: var(--color-grey);
   opacity: 1;
-}
-hr.hr-dark{
-  background-color: var(--bg-dark);
-  opacity: 1;
+
 }
 
 img{
@@ -41,22 +37,6 @@ img{
 a{
   transition: 0.3s;
   text-decoration: none;
-}
-
-main{
-  background-color: var(--color-grey-light);
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-@media (min-width: 1500px) {
-  main{
-     padding-left: 38px;
-     padding-right: 38px;
-  }
 }
 
 body {
@@ -81,9 +61,30 @@ h1, ._h1{
 }
 
 h2, ._h2{
-  color: var(--color-primary);
+  color: var(--color-dark);
   font-weight: 500;
-  font-size: 22px;
+  font-size: clamp(28px, 2.4vw, 37px);
+
+}
+
+
+/* ARROW DOWN */
+.arrow-down {
+  display: flex;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+/* FONT WEIGHTS */
+.fw-medium{
+  font-weight: 500;
+}
+/* FONT SIZES */
+.fs-14{
+  font-size: 14px;
 }
 
 #wrapper{
@@ -141,7 +142,106 @@ h2, ._h2{
   background-color: var(--color-sky-blue);
 }
 
-
+/* NEWS ITEMS */
+.newsItem-row .newsItem-col{
+  position: relative;
+}
+.newsItem-row .newsItem-col:nth-of-type(even){
+  border-right: none;
+}
+.newsItem-row .newsItem-col:nth-of-type(odd) {
+    border-left: none;
+}
+.newsItem-row .newsItem-col:before{ 
+  content: "";
+  position: absolute;
+  top: calc(var(--bs-gutter-x) * -0.5);
+  left: calc(var(--bs-gutter-x) * 0.5);
+  width: calc(100% - calc(var(--bs-gutter-x) * 1));
+  height: 1px;
+  background-color: var(--color-grey);
+}
+.newsItem{
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  container-name: newsItem;
+  container-type: inline-size;
+}
+.newsItem:hover .newsItem-title{
+  text-decoration: underline;
+  color: var(--color-sky-blue);
+}
+.newsItem-title{
+  font-size: 35px;
+  color: var(--color-primary);
+}
+.newsItem-content{
+  padding: 20px 0;
+  color: var(--color-text);
+  font-size: 20px;
+}
+.newsItem-img{
+  width: 100%;
+  display: inline-block;
+}
+.newsItem-img img{
+  width: 100%;
+}
+.newsItem-rubric__wrap{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.newsItem-rubric{
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+@media (min-width: 578px) {
+  .newsItem-row .newsItem-col{
+      border-right: solid 1px var(--color-grey);
+    }
+    .newsItem-row .newsItem-col:nth-child(-n + 2):before{
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  ._border-right{
+    border-right: solid 1px var(--color-grey);
+  }
+  ._border-left{
+    border-left: solid 1px var(--color-grey);
+  }
+}
+@container newsItem (max-width: 457px) {
+  .newsItem-title{
+    font-size: 20px;
+  }
+  .newsItem-content{
+    font-size: 17px;
+  }
+  .newsItem-rubric__wrap{
+    font-size: 12px;
+  }
+}
+@container newsItem (max-width: 300px) {
+  .newsItem-title{
+    font-size: 16px;
+  }
+  .newsItem-content{
+    font-size: 14px;
+  }
+  .newsItem-rubric__wrap{
+    font-size: 10px;
+  }
+}
 
 /* FOOTER */
 .footer{
