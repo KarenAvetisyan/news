@@ -98,13 +98,17 @@ h2, ._h2{
   left: 0;
   width: 100%;
   z-index: 999;
-  height: 56px;
-  border-bottom: solid 1px #D9D9D9;
+  min-height: 56px;
   background-color: #fff;
+}
+.header .navbar-container{
+ 
 }
 .header .navbar{
    background-color: #fff;
    border-bottom: solid 1px #D9D9D9;
+
+   width: 100%;
 }
 .header-navbar__toggler{
   background: none;
@@ -141,6 +145,138 @@ h2, ._h2{
 .header-btn__search:hover{
   background-color: var(--color-sky-blue);
 }
+
+.header .has-submenu > .nav-link{
+  padding-right: 36px;
+}
+.header .has-submenu {
+  position: relative;
+}
+.header .has-submenu > .submenu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  font-size: 14px;
+  border: solid 1px #D9D9D9;
+}
+.header .has-submenu.open > .submenu {
+  display: block;
+  width: 217px;
+}
+.header .submenu-toggle {
+  background: none;
+  border: 0;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.header .submenu-toggle::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transition: .25s ease;
+}
+.header .has-submenu.open > .submenu-toggle::after {
+  transform: rotate(45deg);
+}
+@media (min-width: 1200px) {
+  .header{
+      display: flex;
+      justify-content: center;
+  }
+  .header .navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .header .navbar-container{
+    height: 100%;
+  }
+  .header .navbar-collapse{
+    height: 100%;
+  }
+  .header .navbar-nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .header .navbar-nav > .nav-item{
+    height: 100%;
+    align-items: center;
+    display: flex;
+  }
+  .header .navbar-nav > .has-submenu:first-child > .submenu-toggle{
+    bottom: 0;
+    top: -3px;
+    margin: auto;
+  }
+  .header .navbar-nav > .has-submenu:first-child > .submenu-toggle::after{
+    transform: rotate(45deg);
+  }
+  .header .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(0,0,0,.12);
+    padding: 8px 0;
+  }
+  .header .submenu .submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  .header .has-submenu:hover > .submenu {
+    display: block;
+  }
+  .header .submenu-toggle {
+    pointer-events: none;
+  }
+}
+@media (max-width: 1199px) {
+  .header .nav-item{
+    border-bottom: solid 1px #d6d6d6;
+  }
+  .header .nav-item.open{
+    border-bottom: none;
+  }
+  .header .nav-item:last-of-type{
+    border-bottom: none;
+  }
+  .header .submenu {
+    padding-left: 14px;
+    width: 100%!important;
+    margin-top: 5px!important;
+  }
+  .header .has-submenu > .submenu{
+    border: none;
+    border-left: 3px solid var(--color-primary);
+  }
+  .header .has-submenu.open > .submenu-toggle{
+    background-color: var(--color-sky-blue);
+  }
+  .header .submenu-toggle {
+    right: 0;
+    background-color: var(--color-primary);
+  }
+  .header .submenu-toggle::after{
+    border-color: #fff;
+  }
+}
+
+
+
+
 
 /* NEWS ITEMS */
 .newsItem-row .newsItem-col{
