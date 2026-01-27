@@ -430,8 +430,7 @@ h2, ._h2{
 .articleSingle a:hover{
   text-decoration: none;
 }
-.articleSingle h1,
-.articleSingle ._h1{
+.articleSingle-title{
   font-size: clamp(23px, 3vw, 45px);
 }
 .articleSingle h2,
