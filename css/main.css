@@ -418,54 +418,6 @@ h2, ._h2{
   font-size: 19px;
   border-bottom: solid 1px var(--color-grey);
 }
-.articleSingle img{
-  max-width: 100%;
-  min-width: 0;
-}
-.articleSingle a{
-  color: rgb(254, 42, 42);
-  text-decoration: underline;
-  font-weight: 500;
-}
-.articleSingle a:hover{
-  text-decoration: none;
-}
-.articleSingle-title{
-  font-size: clamp(23px, 3vw, 45px);
-}
-.articleSingle h2,
-.articleSingle ._h2{
-  font-weight: 500;
-  font-size: clamp(17px, 1.3vw, 25px);
-  margin-bottom: 10px;
-}
-.articleSingle h3,
-.articleSingle ._h3{
-  font-weight: 500;
-  font-size: clamp(17px, 1.6vw, 28px);
-  margin-bottom: 10px;
-}
-.articleSingle h4,
-.articleSingle ._h4{
-  font-weight: 500;
-  font-size: clamp(16px, 1.3vw, 24px);
-  margin-bottom: 10px;
-}
-.articleSingle h5,
-.articleSingle ._h5{
-  font-weight: 500;
-  font-size: clamp(15px, 1.1vw, 20px);
-  margin-bottom: 10px;
-}
-.articleSingle ul,
-.articleSingle ol{
-  margin: 10px 0 20px 0;
-  line-height: 145%;
-}
-.articleSingle th{
-  font-weight: 600;
-  color: var(--color-primary);
-}
 .articleSingle-social a{
   width: 40px;
   height: 40px;
@@ -512,6 +464,56 @@ h2, ._h2{
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+.articleSingle img{
+  max-width: 100%;
+  min-width: 0;
+}
+.articleSingle a{
+  text-decoration: underline;
+  color: var(--color-sky-blue);
+  font-weight: 500;
+}
+.articleSingle a:hover{
+  text-decoration: none;
+}
+.articleSingle-title{
+  font-size: clamp(23px, 3vw, 45px);
+}
+.articleSingle h2,
+.articleSingle ._h2{
+  font-weight: 500;
+  font-size: clamp(17px, 1.3vw, 25px);
+  margin-bottom: 10px;
+}
+.articleSingle h3,
+.articleSingle ._h3{
+  font-weight: 500;
+  font-size: clamp(17px, 1.6vw, 28px);
+  margin-bottom: 10px;
+}
+.articleSingle h4,
+.articleSingle ._h4{
+  font-weight: 500;
+  font-size: clamp(16px, 1.3vw, 24px);
+  margin-bottom: 10px;
+}
+.articleSingle h5,
+.articleSingle ._h5{
+  font-weight: 500;
+  font-size: clamp(15px, 1.1vw, 20px);
+  margin-bottom: 10px;
+}
+.articleSingle ul,
+.articleSingle ol{
+  margin: 10px 0 20px 0;
+  line-height: 145%;
+}
+.articleSingle th{
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
 @media (min-width: 768px) {
   .articleSingle table{
     font-size: 17px;
